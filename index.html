@@ -1,166 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fahim Uddin - Cybersecurity & Swift Developer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fahim Uddin | Cybersecurity & AR Dev</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     :root {
-      --primary: #2A0944;
-      --secondary: #3B185F;
-      --accent: #A12568;
-      --light: #FEC260;
+      --text-primary: #1C1C1E;
+      --text-secondary: #48484A;
+      --background: #FFFFFF;
+      --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    /* Fix for About Me section */
+    section {
+      scroll-margin-top: 100px; /* Adjusted to match header height */
+      padding-top: 100px; /* Adjusted to match header height */
+      margin-top: -100px; /* Negative margin to compensate for padding */
+    }
+
+    #about {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-content {
+      flex: 1;
+    }
+
+    .about-image {
+      flex: 1;
+      max-width: 400px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .about-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      #about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-image {
+        max-width: 300px;
+        margin: 0 auto;
+      }
     }
 
     body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--background);
+      color: var(--text-primary);
       line-height: 1.6;
-      background: linear-gradient(45deg, var(--primary), var(--secondary));
-      color: #fff;
       scroll-behavior: smooth;
     }
 
+    /* Header Styles */
     header {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 2rem 0;
-      text-align: center;
-      backdrop-filter: blur(10px);
       position: fixed;
       width: 100%;
       top: 0;
+      background: rgba(255, 255, 255, 0.98);
       z-index: 1000;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      padding: 1.5rem 2rem;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #F0F0F0;
+      height: 100px; /* Added fixed height for the header */
     }
 
-    .header-content {
+    nav {
       max-width: 1200px;
       margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.3rem;
+      padding: 0.5rem 1rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.7;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 12rem 2rem 4rem;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .name {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-bottom: 4rem;
+    }
+
+    .button {
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      background: var(--text-primary);
+      color: var(--background);
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    /* Section Common Styles */
+    .section-container {
+      max-width: 1200px;
+      margin: 4rem auto;
       padding: 0 2rem;
     }
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1rem;
-      flex-wrap: wrap;
-    }
-
-    nav ul li {
-      list-style: none;
-    }
-
-    nav ul li a {
-      color: var(--light);
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-    }
-
-    nav ul li a:hover {
-      background: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    main {
-      max-width: 1200px;
-      margin: 100px auto 0;
-      padding: 2rem;
-    }
-
-    section {
-      padding: 4rem 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      background: linear-gradient(45deg, var(--light), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
+    .section-title {
       font-size: 2.5rem;
-      margin-bottom: 2rem;
-      position: relative;
-      display: inline-block;
+      text-align: center;
+      margin-bottom: 3rem;
+      font-weight: 600;
     }
 
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background: var(--light);
-      border-radius: 2px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2rem;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      margin: 1rem 0;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .skills-grid {
+    /* Project Cards */
+    .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Increased min width */
+      gap: 2.5rem;
+      padding: 2rem;
     }
 
     .project-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 15px;
+      background: var(--background);
+      border: 1px solid #E5E5EA;
+      border-radius: 18px;
+      padding: 2.5rem; /* Increased padding */
+      transition: transform 0.2s ease;
+      box-shadow: var(--card-shadow);
     }
 
-    .project-card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
+    .project-card h3 {
+      font-size: 2rem; /* Increased font size */
+      margin-bottom: 1.5rem;
     }
 
-    .project-card:hover img {
-      transform: scale(1.1);
+    .project-card p {
+      font-size: 1.2rem; /* Increased font size */
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
     }
 
-    .project-info {
-      position: absolute;
-      bottom: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.9));
-      width: 100%;
-      padding: 1.5rem;
+    .project-card .github-button {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      background: var(--text-primary);
+      color: var(--background);
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.2s ease;
+    }
+
+    .project-card .github-button:hover {
+      transform: scale(1.05);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Timeline Items */
+    .timeline-item {
+      background: var(--background);
+      border: 1px solid #E5E5EA;
+      border-radius: 18px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .timeline-item h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-item p {
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .education-dates,
+    .experience-dates {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Contact Section */
+    footer {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--background);
+      margin-top: 4rem;
+      border-top: 1px solid #F0F0F0;
     }
 
     .contact-links {
@@ -170,153 +279,160 @@
       margin-top: 2rem;
     }
 
-    .contact-links a {
-      font-size: 2.5rem;
-      color: var(--light);
-      transition: all 0.3s ease;
+    .contact-link {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 1.4rem;
+      transition: opacity 0.2s ease;
+      padding: 1rem;
     }
 
-    .contact-links a:hover {
-      color: var(--accent);
-      transform: scale(1.2);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: rgba(0, 0, 0, 0.8);
-      margin-top: 4rem;
+    .contact-link:hover {
+      opacity: 0.7;
     }
 
     @media (max-width: 768px) {
-      main {
-        padding: 1rem;
-      }
-      
-      h1 {
+      .name {
         font-size: 2.5rem;
       }
-      
-      h2 {
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+
+      .section-title {
         font-size: 2rem;
+      }
+
+      .contact-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .nav-links a {
+        font-size: 1.1rem;
+      }
+
+      .logo {
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="header-content">
-      <h1>Fahim Uddin</h1>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <div class="logo">Fahim Uddin</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <section id="about">
-      <div class="card">
-        <h2>Cybersecurity Researcher & AR Developer</h2>
-        <p>Hi! I'm Fahim Uddin, a passionate cybersecurity student and Swift developer specializing in immersive AR experiences. Currently enhancing digital security while creating cutting-edge augmented reality applications at the MSU Apple Developer Academy.</p>
+    <!-- About Section -->
+    <section class="hero">
+      <h1 class="name">Fahim Uddin</h1>
+      <p class="title">Cybersecurity Analyst & Software Engineer</p>
+      <div class="button-group">
+        <a href="#" class="button">
+          <i class="fas fa-download"></i>
+          Download Resume
+        </a>
+        <a href="#contact" class="button">
+          <i class="fas fa-envelope"></i>
+          Contact Info
+        </a>
       </div>
     </section>
 
-    <section id="education">
-      <div class="card">
-        <h2>Education</h2>
-        <p><strong>Associates in Cybersecurity</strong><br>
-        Expected Completion: August 2025<br>
-        Started: September 2023</p>
+     <section id="about">
+      <div class="about-image">
+        <img src="your-image.jpg" alt="Fahim Uddin">
       </div>
-    </section>
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>
+          Hello, my name is Fahim, and I'm a cybersecurity student and iOS developer.
+          I'm currently studying at Wayne County Community College District, where I’m deepening my understanding of cybersecurity and software development. My passion for technology extends beyond security—I have a strong interest in iOS development, particularly in augmented reality (AR).
 
-    <section id="skills">
-      <div class="card">
-        <h2>Technical Arsenal</h2>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <h3>AR Development</h3>
-            <p>ARKit • RealityKit • SceneKit • LiDAR</p>
-          </div>
-          <div class="skill-card">
-            <h3>iOS Development</h3>
-            <p>SwiftUI • AVFoundation • Core ML • UIKit</p>
-          </div>
-          <div class="skill-card">
-            <h3>Cybersecurity</h3>
-            <p>Network Security • Cryptography • Ethical Hacking</p>
-          </div>
-        </div>
+          I’ve worked on various iOS projects utilizing Swift, SwiftUI, ARKit, RealityKit, and other Apple frameworks. My goal is to create innovative and immersive applications that blend cybersecurity principles with cutting-edge AR experiences.
+
+          In addition to my studies, I enjoy learning new technologies and refining my skills through hands-on projects. I'm currently looking for opportunities to contribute to app-based technology companies as an iOS developer or cybersecurity researcher.
+        </p>
+  
       </div>
     </section>
 
     <section id="projects">
-      <div class="card">
-        <h2>Featured Project</h2>
-        <div class="project-card">
-          <img src="joy-bangale-preview.jpg" alt="Joy Bangale AR Experience">
-          <div class="project-info">
-            <h3>Joy Bangale</h3>
-            <p>Immersive 3D AR experience showcasing Bangladeshi culture using SceneKit, RealityKit, and spatial audio with AVFoundation. Features interactive heritage sites and cultural artifacts.</p>
-            <a href="https://github.com/yourusername/joy-bangale" target="_blank" class="github-link">
-              <i class="fab fa-github"></i> View on GitHub
+      <div class="section-container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Joy Bangale 🇧🇩</h3>
+            <p>ARKit • RealityKit • SceneKit</p>
+            <p>Immersive 3D AR experience showcasing Bangladeshi culture with advanced spatial computing techniques</p>
+            <a href="https://github.com/FahimU123/Swift-Student-Challenge-2025-Joy-Bangla" class="github-button" target="_blank">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+
+          <div class="project-card">
+            <h3>Coding Guide 🔒</h3>
+            <p>Swift</p>
+            <p>What started as a way to master the fundamentals of Swift has evolved into a comprehensive resource covering everything from basic syntax to advanced topics like generics, ARKit, and error handling.</p>
+            <a href="https://github.com/FahimU123/Personal-Coding-Guide" class="github-button" target="_blank">
+              <i class="fab fa-github"></i> GitHub
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="card">
-        <h2>Let's Connect</h2>
+    <section id="education" class="section-container">
+      <h2 class="section-title">Education</h2>
+      <div class="timeline-item">
+        <div class="education-dates">Sept. 2023 - August 2025</div>
+        <h3>Wayne County Community College</h3>
+        <p>Associates in Cybersecurity</p>
+        <p>Relevant Coursework: Linux, Security Pro, Network Security, Intro to Databases</p>
+      </div>
+    </section>
+
+    <section id="experiences" class="section-container">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline-item">
+        <div class="experience-dates">2022 - Present</div>
+        <h3>MSU Apple Developer Academy</h3>
+        <p>Coder/Designer</p>
+        <p>At the Apple Developer Academy, we work in teams using Challenge-Based Learning to develop innovative iOS applications. Throughout the program, I have taken on roles as both a designer and a coder, contributing to various challenges that enhance problem-solving, collaboration, and technical skills. This experience has allowed me to refine my expertise in Swift, UI/UX design, and iOS development while working on real-world projects.</p>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="section-container">
+        <h2 class="section-title">Get in Touch</h2>
         <div class="contact-links">
-          <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github"></i>
+          <a href="#" class="contact-link">
+            <i class="fab fa-github"></i> GitHub
           </a>
-          <a href="mailto:your.email@example.com" aria-label="Email">
-            <i class="fas fa-envelope"></i>
+          <a href="#" class="contact-link">
+            <i class="fab fa-linkedin"></i> LinkedIn
           </a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
+          <a href="#" class="contact-link">
+            <i class="fas fa-envelope"></i> Email
           </a>
         </div>
       </div>
-    </section>
+    </footer>
   </main>
-
-  <footer>
-    <p>&copy; 2023 Fahim Uddin | Securing Digital Frontiers, Crafting AR Experiences</p>
-  </footer>
-
-  <script>
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('section').forEach(section => {
-      observer.observe(section);
-    });
-
-    // Smooth scroll for navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
 </body>
 </html>
