@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fahim Uddin | Cybersecurity & AR Dev</title>
+  <title>Fahim Uddin | Software Developer</title> {/* UPDATED */}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     :root {
@@ -20,11 +20,10 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     }
 
-    /* Fix for About Me section */
     section {
-      scroll-margin-top: 100px; /* Adjusted to match header height */
-      padding-top: 100px; /* Adjusted to match header height */
-      margin-top: -100px; /* Negative margin to compensate for padding */
+      scroll-margin-top: 100px;
+      padding-top: 100px;
+      margin-top: -100px;
     }
 
     #about {
@@ -40,7 +39,7 @@
       flex: 1;
     }
 
-    .about-image {
+    .about-image { /* Reverted to original potential for propic.jpeg */
       flex: 1;
       max-width: 400px;
       border-radius: 18px;
@@ -73,8 +72,8 @@
       }
 
       .about-image {
-        max-width: 300px;
-        margin: 0 auto;
+        max-width: 300px; /* Or your preferred size */
+        margin: 0 auto 2rem auto;
       }
     }
 
@@ -85,7 +84,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Header Styles */
     header {
       position: fixed;
       width: 100%;
@@ -95,7 +93,7 @@
       padding: 1.5rem 2rem;
       backdrop-filter: blur(10px);
       border-bottom: 1px solid #F0F0F0;
-      height: 100px; /* Added fixed height for the header */
+      height: 100px;
     }
 
     nav {
@@ -129,7 +127,6 @@
       opacity: 0.7;
     }
 
-    /* Hero Section */
     .hero {
       padding: 12rem 2rem 4rem;
       text-align: center;
@@ -138,17 +135,26 @@
     }
 
     .name {
-      font-size: 3.5rem;
+      font-size: 3.5rem; 
       margin-bottom: 1rem;
       font-weight: 700;
       letter-spacing: -0.5px;
     }
-
-    .title {
-      font-size: 1.5rem;
-      color: var(--text-secondary);
-      margin-bottom: 3rem;
+    
+    .title { /* For "Software Developer & Swift Enthusiast" */
+      font-size: 1.8rem; /* Made slightly larger for emphasis */
+      color: var(--text-primary); /* More prominent color */
+      font-weight: 500;
+      margin-bottom: 1rem;
     }
+
+    .hero-subtitle { /* For the aspiration/learning line */
+        font-size: 1.3rem;
+        color: var(--text-secondary);
+        margin-bottom: 3rem;
+        line-height: 1.7;
+    }
+
 
     .button-group {
       display: flex;
@@ -174,7 +180,6 @@
       transform: scale(1.05);
     }
 
-    /* Section Common Styles */
     .section-container {
       max-width: 1200px;
       margin: 4rem auto;
@@ -188,10 +193,9 @@
       font-weight: 600;
     }
 
-    /* Project Cards */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Increased min width */
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       gap: 2.5rem;
       padding: 2rem;
     }
@@ -200,21 +204,30 @@
       background: var(--background);
       border: 1px solid #E5E5EA;
       border-radius: 18px;
-      padding: 2.5rem; /* Increased padding */
+      padding: 2.5rem;
       transition: transform 0.2s ease;
       box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .project-card h3 {
-      font-size: 2rem; /* Increased font size */
+      font-size: 2rem;
       margin-bottom: 1.5rem;
     }
 
     .project-card p {
-      font-size: 1.2rem; /* Increased font size */
+      font-size: 1.2rem;
       color: var(--text-secondary);
       line-height: 1.8;
       margin-bottom: 1.5rem;
+    }
+    .project-card .tech-stack {
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
     }
 
     .project-card .github-button {
@@ -226,6 +239,7 @@
       text-decoration: none;
       font-weight: 500;
       transition: transform 0.2s ease;
+      margin-top: auto;
     }
 
     .project-card .github-button:hover {
@@ -235,8 +249,31 @@
     .project-card:hover {
       transform: translateY(-5px);
     }
+    
+    #learning ul {
+        list-style: none; 
+        padding-left: 0;
+    }
 
-    /* Timeline Items */
+    #learning li {
+        background: var(--background);
+        border: 1px solid #E5E5EA;
+        border-radius: 12px; 
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: var(--card-shadow);
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        line-height: 1.7;
+    }
+     #learning li strong { 
+        color: var(--text-primary);
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+
     .timeline-item {
       background: var(--background);
       border: 1px solid #E5E5EA;
@@ -263,7 +300,6 @@
       margin-bottom: 1rem;
     }
 
-    /* Contact Section */
     footer {
       text-align: center;
       padding: 4rem 2rem;
@@ -293,7 +329,13 @@
 
     @media (max-width: 768px) {
       .name {
-        font-size: 2.5rem;
+        font-size: 2.8rem; 
+      }
+      .title {
+        font-size: 1.5rem;
+      }
+      .hero-subtitle {
+        font-size: 1.1rem;
       }
 
       .projects-grid {
@@ -303,6 +345,10 @@
 
       .section-title {
         font-size: 2rem;
+      }
+      #learning li {
+        font-size: 1rem;
+        padding: 1rem;
       }
 
       .contact-links {
@@ -331,6 +377,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#learning">Learning</a> 
         <a href="#education">Education</a>
         <a href="#experiences">Experience</a>
         <a href="#contact">Contact</a>
@@ -339,32 +386,35 @@
   </header>
 
   <main>
-    <!-- About Section -->
     <section class="hero">
-   <h1 class="name">Fahim Uddin</h1>
-   <p class="title">Cybersecurity Analyst & Software Engineer</p>
-   <div class="button-group">
-     <a href="https://docs.google.com/document/d/1-fs3dM0TFN31BlCwQoO8ZBQfDniOZlv9ytqRxS-Ncdk/edit?usp=sharing" class="button" target="_blank">
-       <i class="fas fa-download"></i>
-       Download Resume
-     </a>
-     <a href="#contact" class="button">
-       <i class="fas fa-envelope"></i>
-       Contact Info
-     </a>
-   </div>
- </section>
+      <h1 class="name">Fahim Uddin</h1>
+      <p class="title">Software Developer & Swift Enthusiast</p>
+      <p class="hero-subtitle">Always learning and striving to build impactful software.
+        <br>(My moonshot goal? To one day be the Thanos of clean, elegant code solutions!)</p>
+      <div class="button-group">
+        <a href="https://docs.google.com/document/d/1-fs3dM0TFN31BlCwQoO8ZBQfDniOZlv9ytqRxS-Ncdk/edit?usp=sharing" class="button" target="_blank">
+          <i class="fas fa-download"></i>
+          Download Resume
+        </a>
+        <a href="#contact" class="button">
+          <i class="fas fa-envelope"></i>
+          Contact Info
+        </a>
+      </div>
+    </section>
 
-
-     <section id="about">
+    <section id="about">
       <div class="about-image">
-        <img src="propic.jpeg" alt="Fahim Uddin">
+        <img src="propic.jpeg" alt="Fahim Uddin, Software Developer">
       </div>
       <div class="about-content">
         <h2>About Me</h2>
         <p>
-         Hello, I’m Fahim, a Swift Certified iOS developer and cybersecurity student at Wayne County Community College District. I specialize in cybersecurity and augmented reality (AR), working with Swift, SwiftUI, ARKit, and RealityKit to create immersive applications. Passionate about technology, I continuously refine my skills through hands-on projects and am seeking opportunities in iOS development or cybersecurity research.
-  
+          Hello! I'm Fahim, a software developer with a deep passion for crafting applications, especially using Swift. Some folks affectionately call me 'I Code,' which pretty much sums up what I love to do. I'm on a continuous journey to learn, build, and solve problems with technology.
+        </p>
+        <p>
+          My goal is to create software that's not only functional but also user-friendly and, hopefully, a bit delightful. This path involves plenty of 'aha!' moments, a fair share of head-scratching, and the constant pursuit of writing better, cleaner code. I'm always eager to explore new concepts and refine my skills.
+        </p>
       </div>
     </section>
 
@@ -373,24 +423,43 @@
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
           <div class="project-card">
-            <h3>Joy Bangla 🇧🇩</h3>
-            <p>ARKit • RealityKit • SceneKit • SwiftUI • AVFoundation</p>
-            <p>Immersive 3D AR experience showcasing Bangladeshi culture with advanced spatial computing techniques</p>
-            <a href="https://github.com/FahimU123/Swift-Student-Challenge-2025-Joy-Bangla" class="github-button" target="_blank">
-              <i class="fab fa-github"></i> GitHub
-            </a>
-          </div>
+            <div>
+              <h3>Shifa</h3>
+              <p class="tech-stack">Swift • SwiftUI • MVVM • Design Patterns (e.g., Singletons)</p>
+              <p>Your companion for emotional well-being, offering authentic Islamic guidance for modern struggles. Built to practice clean, modular code, explore design patterns like singletons, and master MVVM architecture.</p>
+            </div>
+            </div>
 
           <div class="project-card">
-            <h3>Coding Guide 🔒</h3>
-            <p>Swift</p>
-            <p>What started as a way to master the fundamentals of Swift has evolved into a comprehensive resource covering everything from basic syntax to advanced topics like generics, frameworks like ARKit, and much more.</p>
-            <a href="https://github.com/FahimU123/Personal-Coding-Guide" class="github-button" target="_blank">
+            <div>
+              <h3>Joy Bangla</h3>
+              <p class="tech-stack">ARKit • RealityKit • SceneKit • SwiftUI • AVFoundation</p>
+              <p>An immersive 3D AR experience showcasing Bangladeshi culture with advanced spatial computing techniques.</p>
+            </div>
+            <a href="https://github.com/FahimU123/Swift-Student-Challenge-2025-Joy-Bangla" class="github-button" target="_blank">
               <i class="fab fa-github"></i> GitHub
             </a>
           </div>
         </div>
       </div>
+    </section>
+
+    <section id="learning" class="section-container">
+        <h2 class="section-title">What I'm Exploring Now</h2>
+        <ul>
+            <li>
+                <strong>Advanced Swift Techniques:</strong> Always looking for ways to make my Swift code more efficient and powerful.
+            </li>
+            <li>
+                <strong>Effective Debugging Strategies:</strong> Honing the art of figuring out why the app isn't doing what I *told* it to do. It's a delightful puzzle!
+            </li>
+            <li>
+                <strong>Mastering Git & Version Control:</strong> Beyond `git commit -m "stuff"`. Learning to wield version control with more grace and less panic.
+            </li>
+            <li>
+                <strong>Understanding Design Patterns Deeply:</strong> Aiming to not just use them, but to understand *why* and *when* to use them for robust, scalable applications.
+            </li>
+        </ul>
     </section>
 
     <section id="education" class="section-container">
@@ -399,7 +468,7 @@
         <div class="education-dates">Sept. 2023 - Present</div>
         <h3>Wayne County Community College</h3>
         <p>Associates in Cybersecurity</p>
-        <p>Relevant Coursework: Linux, Security Pro, Network Security, Intro to Database Concepts</p>
+        <p>Relevant Coursework: Linux, Security Pro, Network Security, Intro to Database Concepts. (Building a solid foundation!)</p>
       </div>
     </section>
 
@@ -414,22 +483,21 @@
     </section>
 
     <footer id="contact">
-    <div class="section-container">
-        <h2 class="section-title">Get in Touch</h2>
+      <div class="section-container">
+        <h2 class="section-title">Get In Touch</h2>
         <div class="contact-links">
-            <a href="https://github.com/FahimU123" class="contact-link" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/fahim-u-82857b301/" class="contact-link" target="_blank">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <span class="contact-link">
-                <i class="fas fa-envelope"></i> fahimuddin956@gmail.com
-            </span>
+          <a href="https://github.com/FahimU123" class="contact-link" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/fahim-u-82857b301/" class="contact-link" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <span class="contact-link">
+            <i class="fas fa-envelope"></i> fahimuddin956@gmail.com
+          </span>
         </div>
-    </div>
-</footer>
-
+      </div>
+    </footer>
   </main>
 </body>
 </html>
