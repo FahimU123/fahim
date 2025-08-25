@@ -90,12 +90,24 @@
 
         /* --- Hero Section --- */
         .hero {
-            padding: 12rem 0 8rem;
+            padding: 10rem 0 7rem;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        
+
         .hero .container {
             max-width: 800px;
+        }
+        
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .name {
@@ -177,7 +189,7 @@
         /* --- Projects Section --- */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 2rem;
         }
 
@@ -190,7 +202,6 @@
             box-shadow: var(--card-shadow);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
         .project-card:hover {
@@ -209,12 +220,30 @@
             margin-bottom: 1rem;
             font-weight: 500;
         }
+        
+        .project-card ul {
+            list-style-position: outside;
+            padding-left: 20px;
+            color: var(--text-secondary);
+            flex-grow: 1; /* Allows list to take up available space */
+        }
+
+        .project-card li {
+            margin-bottom: 0.75rem;
+        }
 
         .project-card p {
             font-size: 1rem;
             color: var(--text-secondary);
             line-height: 1.6;
             margin-bottom: 1.5rem;
+        }
+
+        .project-card .note {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 1.5rem;
+            font-style: italic;
         }
 
         .github-button {
@@ -345,8 +374,12 @@
                 font-size: 1.75rem;
             }
             .nav-links {
-                /* Basic mobile nav handling, can be improved with JS */
                 display: none; 
+            }
+             .profile-picture {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 1rem;
             }
         }
     </style>
@@ -354,7 +387,7 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">F.U.</div>
+            <div class="logo">Fahim Uddin</div>
             <div class="nav-links">
                 <a href="#projects">Projects</a>
                 <a href="#education">Education</a>
@@ -367,6 +400,7 @@
     <main>
         <section class="hero">
             <div class="container">
+                <img src="propic.jpg" alt="Profile Picture" class="profile-picture anim-fade-in-up">
                 <h1 class="name anim-fade-in-up">Fahim Uddin</h1>
                 <p class="title anim-fade-in-up" style="animation-delay: 0.2s;">Software Developer & Swift Enthusiast</p>
                 <p class="hero-subtitle anim-fade-in-up" style="animation-delay: 0.4s;">
@@ -387,6 +421,30 @@
             <div class="container">
                 <h2 class="section-title anim-reveal">Featured Projects</h2>
                 <div class="projects-grid">
+                    
+                    <div class="project-card anim-reveal">
+                        <div>
+                            <h3>DeadBet: Gambling Recovery App</h3>
+                            <ul>
+                                <li>Developed and shipped DeadBet, a mobile application to the App Store, in a team of 5 to help individuals recover from gambling addiction.</li>
+                                <li>Achieved 5 star reviews on App Store for its intuitive design and supportive features.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card anim-reveal">
+                         <div>
+                            <h3>Tonyz Grills: A Scalable Restaurant Ordering App</h3>
+                            <ul>
+                                <li>Architected a mobile food ordering application focusing on a scalable, API-driven backend for real-time menu and order management.</li>
+                                <li>Implemented core design patterns including POP, OOP, and MVVM to ensure a clean separation of concerns.</li>
+                                <li>Utilized Dependency Injection to create a testable and maintainable codebase.</li>
+                                <li>Designed and consumed various APIs to handle user authentication, order processing, and payment integration.</li>
+                            </ul>
+                             <p class="note">This application is currently in progress. Code is available upon request.</p>
+                        </div>
+                    </div>
+                    
                     <div class="project-card anim-reveal">
                         <div>
                             <h3>Shifa</h3>
@@ -408,6 +466,7 @@
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -508,7 +567,5 @@
         `;
         document.head.appendChild(styleSheet);
     </script>
-</body>
-</html>
 </body>
 </html>
