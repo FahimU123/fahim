@@ -102,8 +102,8 @@
         }
         
         .profile-picture {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1.5rem;
@@ -202,6 +202,7 @@
             box-shadow: var(--card-shadow);
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-card:hover {
@@ -225,7 +226,7 @@
             list-style-position: outside;
             padding-left: 20px;
             color: var(--text-secondary);
-            flex-grow: 1; /* Allows list to take up available space */
+            margin-bottom: 1.5rem;
         }
 
         .project-card li {
@@ -237,6 +238,7 @@
             color: var(--text-secondary);
             line-height: 1.6;
             margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
 
         .project-card .note {
@@ -246,7 +248,7 @@
             font-style: italic;
         }
 
-        .github-button {
+        .project-link, .github-button {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -257,16 +259,16 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.2s ease;
-            margin-top: auto; /* Pushes button to the bottom */
-            align-self: flex-start; /* Aligns to the left */
+            margin-top: auto;
+            align-self: flex-start;
         }
 
-        .github-button:hover {
+        .project-link:hover, .github-button:hover {
             background: #e5e7eb;
             transform: scale(1.03);
         }
         
-        .github-button .fa-github {
+        .project-link i, .github-button .fa-github {
             font-size: 1.1rem;
         }
 
@@ -376,9 +378,9 @@
             .nav-links {
                 display: none; 
             }
-             .profile-picture {
-                width: 120px;
-                height: 120px;
+            .profile-picture {
+                width: 140px;
+                height: 140px;
                 margin-bottom: 1rem;
             }
         }
@@ -430,6 +432,9 @@
                                 <li>Achieved 5 star reviews on App Store for its intuitive design and supportive features.</li>
                             </ul>
                         </div>
+                        <a href="#" class="project-link">
+                            <i class="fab fa-apple"></i> App Store Link
+                        </a>
                     </div>
                     
                     <div class="project-card anim-reveal">
