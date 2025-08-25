@@ -77,11 +77,31 @@
     }
 
     .hero {
-      padding: 12rem 2rem 4rem;
+      padding: 8rem 2rem 4rem;
       text-align: center;
       max-width: 1200px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
+    .hero-image {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+        margin-bottom: 2rem;
+        border: 3px solid var(--background);
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
 
     .name {
       font-size: 3.5rem; 
@@ -264,7 +284,11 @@
     }
 
     @media (max-width: 768px) {
-      .name {
+      .hero-image {
+            width: 140px;
+            height: 140px;
+        }
+      .name {
         font-size: 2.8rem; 
       }
       .title {
@@ -317,10 +341,13 @@
 
   <main>
 <section class="hero">
+  <div class="hero-image">
+    <img src="propic.jpg" alt="Fahim Uddin, Software Developer">
+  </div>
   <h1 class="name">Fahim Uddin</h1>
   <p class="title">Software Developer & Swift Enthusiast</p>
   <p class="hero-subtitle">Hooked on Swift and the challenge of building great software.<br>
-  My moonshot goal: to be the best developer I can be, make an app that actually gets downloads, and impacts people's lives!</p>
+  My moonshot goal: to be the best developer I can be, make an app that actually gets downloads, and impacts people's lives in a good way—of course!</p>
   <div class="button-group">
     <a href="FahimUddin-Resume.pdf" class="button" target="_blank">
       <i class="fas fa-download"></i>
