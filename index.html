@@ -3,576 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahim Uddin | Software Developer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Fahim Uddin</title>
     <style>
-        :root {
-            --background: #FFFFFF;
-            --text-primary: #111827; /* Darker black for better contrast */
-            --text-secondary: #6B7280; /* Softer gray */
-            --border-color: #E5E7EB;
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            --card-hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.07);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            background: var(--background);
-            color: var(--text-primary);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            max-width: 650px;
+            margin: 4rem auto;
+            padding: 0 1rem;
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            color: #111;
         }
-
-        /* Utility Class for consistent container width */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        h1 {
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            letter-spacing: -1px;
         }
-
-        /* --- Header & Navigation --- */
-        header {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            transition: box-shadow 0.2s ease-in-out;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            padding: 10rem 0 7rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .hero .container {
-            max-width: 800px;
-        }
-        
-        .profile-picture {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .name {
-            font-size: 4rem;
-            font-weight: 700;
-            letter-spacing: -1.5px;
-            margin-bottom: 0.5rem;
-        }
-        
-        .title {
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            padding: 0.75rem 1.5rem;
-            border-radius: 999px; /* Pill shape */
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            border: 1px solid transparent;
-        }
-
-        .button.primary {
-            background: var(--text-primary);
-            color: var(--background);
-        }
-
-        .button.primary:hover {
-            background: #333;
-            transform: translateY(-2px);
-        }
-
-        .button.secondary {
-            background: var(--background);
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-        }
-        
-        .button.secondary:hover {
-            background: #f9fafb;
-            transform: translateY(-2px);
-        }
-
-
-        /* --- General Section Styling --- */
-        section {
-            padding-top: 6rem;
-        }
-
-        .section-title {
-            font-size: 2.25rem;
-            text-align: center;
-            margin-bottom: 4rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-
-        /* --- Projects Section --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--background);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: var(--card-shadow);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-hover-shadow);
-        }
-        
-        .project-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .project-card .tech-stack {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
+        h2 {
+            margin-top: 3rem;
             margin-bottom: 1rem;
-            font-weight: 500;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 0.5rem;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: #444;
         }
-        
-        .project-card ul {
-            list-style-position: outside;
-            padding-left: 20px;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
-
-        .project-card li {
-            margin-bottom: 0.75rem;
+        li {
+            margin-bottom: 0.8rem;
         }
-
-        .project-card p {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .project-card .note {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            margin-top: 1.5rem;
-            font-style: italic;
-        }
-
-        .project-link, .github-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            border-radius: 999px;
-            background: #f3f4f6;
-            color: var(--text-primary);
+        a {
+            color: #0000EE;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            margin-top: auto;
-            align-self: flex-start;
-        }
-
-        .project-link:hover, .github-button:hover {
-            background: #e5e7eb;
-            transform: scale(1.03);
-        }
-        
-        .project-link i, .github-button .fa-github {
             font-size: 1.1rem;
         }
-
-
-        /* --- Education & Experience Timeline --- */
-        .timeline-container {
-            max-width: 800px;
-            margin: 0 auto;
+        a:hover {
+            text-decoration: underline;
         }
-
-        .timeline-item {
-            background: var(--background);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.75rem;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--card-shadow);
-        }
-
-        .timeline-item h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.25rem;
-            font-weight: 600;
-        }
-        
-        .timeline-item p {
-            color: var(--text-secondary);
-            margin-bottom: 0.25rem;
-        }
-
-        .timeline-dates {
-            color: #9ca3af;
-            font-size: 0.875rem;
-            margin-bottom: 0.75rem;
-            font-weight: 500;
-        }
-
-        .timeline-item ul {
-            list-style-position: outside;
-            padding-left: 20px;
-            margin-top: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .timeline-item li {
-            margin-bottom: 0.5rem;
-        }
-
-
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 5rem 0;
-            background: #fafafa;
-            margin-top: 6rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-link {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contact-link:hover {
-            color: var(--text-primary);
-        }
-
-        .contact-link i {
-            font-size: 1.25rem;
-        }
-
-        /* --- Media Queries for Responsiveness --- */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-            .name {
-                font-size: 3rem;
-            }
-            .title {
-                font-size: 1.25rem;
-            }
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            .section-title {
-                font-size: 1.75rem;
-            }
-            .nav-links {
-                display: none; 
-            }
-            .profile-picture {
-                width: 140px;
-                height: 140px;
-                margin-bottom: 1rem;
-            }
+        p {
+            font-size: 1.1rem;
+            color: #555;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">Fahim Uddin</div>
-            <div class="nav-links">
-                <a href="#projects">Projects</a>
-                <a href="#education">Education</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <img src="propic.jpg" alt="Profile Picture" class="profile-picture anim-fade-in-up">
-                <h1 class="name anim-fade-in-up">Fahim Uddin</h1>
-                <p class="title anim-fade-in-up" style="animation-delay: 0.2s;">Software Developer & Swift Enthusiast</p>
-                <p class="hero-subtitle anim-fade-in-up" style="animation-delay: 0.4s;">
-                    Hooked on Swift and the challenge of building great software. My goal is to build apps that make a positive impact on people's lives.
-                </p>
-                <div class="button-group anim-fade-in-up" style="animation-delay: 0.6s;">
-                    <a href="FahimUddin-Resume.pdf" class="button primary" target="_blank">
-                        <i class="fas fa-download"></i> Download Resume
-                    </a>
-                    <a href="#contact" class="button secondary">
-                        <i class="fas fa-envelope"></i> Contact Info
-                    </a>
-                </div>
-            </div>
-        </section>
+    <h1>Fahim Uddin</h1>
 
-        <section id="projects">
-            <div class="container">
-                <h2 class="section-title anim-reveal">Featured Projects</h2>
-                <div class="projects-grid">
-                    
-                    <div class="project-card anim-reveal">
-                        <div>
-                            <h3>DeadBet: Gambling Recovery App</h3>
-                            <ul>
-                                <li>Developed and shipped DeadBet, a mobile application to the App Store, in a team of 5 to help individuals recover from gambling addiction.</li>
-                                <li>Achieved 5 star reviews on App Store for its intuitive design and supportive features.</li>
-                            </ul>
-                        </div>
-                        <a href="https://apps.apple.com/us/app/deadbet/id6746578802" class="project-link">
-                            <i class="fab fa-apple"></i> App Store Link
-                        </a>
-                    </div>
-                    
-                    <div class="project-card anim-reveal">
-                         <div>
-                            <h3>Tonyz Grills: A Scalable Restaurant Ordering App</h3>
-                            <ul>
-                                <li>Architected a mobile food ordering application focusing on a scalable, API-driven backend for real-time menu and order management.</li>
-                                <li>Implemented core design patterns including POP, OOP, and MVVM to ensure a clean separation of concerns.</li>
-                                <li>Utilized Dependency Injection to create a testable and maintainable codebase.</li>
-                                <li>Designed and consumed various APIs to handle user authentication, order processing, and payment integration.</li>
-                            </ul>
-                         </div>
-                        <a href="https://github.com/FahimU123/TonysGrillz" class="github-button" target="_blank">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                    
-                    <div class="project-card anim-reveal">
-                        <div>
-                            <h3>Shifa</h3>
-                            <p class="tech-stack">Swift • SwiftUI • MVVM</p>
-                            <p>Your companion for emotional well-being, offering authentic Islamic guidance for modern struggles. Built to practice clean, modular code and master MVVM architecture.</p>
-                        </div>
-                        <a href="https://github.com/FahimU123/Shifa" class="github-button" target="_blank">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
+    <h2>Connect</h2>
+    <ul>
+        <li><a href="FahimUddin-Resume.pdf" target="_blank">View Resume</a></li>
+        <li><a href="https://github.com/FahimU123" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/fahim-udd/" target="_blank">LinkedIn</a></li>
+    </ul>
 
-                    <div class="project-card anim-reveal">
-                        <div>
-                            <h3>Joy Bangla</h3>
-                            <p class="tech-stack">ARKit • RealityKit • SceneKit • SwiftUI</p>
-                            <p>An immersive 3D Augmented Reality experience showcasing Bangladeshi culture with advanced spatial computing techniques.</p>
-                        </div>
-                        <a href="https://github.com/FahimU123/Swift-Student-Challenge-2025-Joy-Bangla" class="github-button" target="_blank">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
+    <h2>Video Tutorials</h2>
+    <ul>
+        <li>
+            <a href="https://www.youtube.com/@313Fahim" target="_blank">Visit my YouTube Channel</a>
+        </li>
+    </ul>
 
-                </div>
-            </div>
-        </section>
+    <h2>Written Articles</h2>
+    <p>Coming Soon...</p>
 
-        <section id="education">
-            <div class="container timeline-container">
-                <h2 class="section-title anim-reveal">Education</h2>
-                <div class="timeline-item anim-reveal">
-                    <div class="timeline-dates">August 2025 – Present</div>
-                    <h3>Eastern Michigan University</h3>
-                    <p>Bachelor of Science in Cybersecurity | Ypsilanti, MI</p>
-                </div>
-                <div class="timeline-item anim-reveal">
-                    <div class="timeline-dates">August 2023 – June 2025</div>
-                    <h3>Wayne County Community College</h3>
-                    <p>Associate of Science in Cybersecurity | Detroit, MI</p>
-                    <p>Relevant Coursework: Linux, Security Pro, Network Security, Intro to Database Concepts.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience">
-            <div class="container timeline-container">
-                <h2 class="section-title anim-reveal">Experience</h2>
-                <div class="timeline-item anim-reveal">
-                    <div class="timeline-dates">February 2025 – Present</div>
-                    <h3>Self-Employed Swift Tutor</h3>
-                    <p>Freelance | Remote</p>
-                    <ul>
-                        <li>Provided one-on-one Swift and iOS development tutoring to students and aspiring developers, focusing on core concepts and best practices.</li>
-                    </ul>
-                </div>
-                <div class="timeline-item anim-reveal">
-                    <div class="timeline-dates">August 2024 – Present</div>
-                    <h3>Developer, Designer & Project Manager</h3>
-                    <p>Apple Developer Academy | Detroit, MI</p>
-                    <ul>
-                        <li>Developed and shipped one app to the App Store and several to TestFlight, showcasing proficiency in the full app development life cycle.</li>
-                        <li>Collaborated effectively in diverse teams and directly with clients to serve their needs throughout the entire process.</li>
-                        <li>Managed the end-to-end development process, including user stories, style guides, and technical documentation.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <footer id="contact">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-links">
-                    <a href="https://github.com/FahimU123" class="contact-link" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="https://www.linkedin.com/in/fahim-u-82857b301/" class="contact-link" target="_blank">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="mailto:fahimuddin956@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i> fahimuddin956@gmail.com
-                    </a>
-                </div>
-            </div>
-        </footer>
-    </main>
-
-    <script>
-        // Simple fade-in-up animation on load for the hero section
-        const heroElements = document.querySelectorAll('.anim-fade-in-up');
-        heroElements.forEach((el, index) => {
-            el.style.animation = `fadeInUp 0.6s ease-out forwards ${el.style.animationDelay || '0s'}`;
-        });
-
-        // ScrollReveal for other sections
-        ScrollReveal().reveal('.anim-reveal', {
-            delay: 200,
-            distance: '30px',
-            origin: 'bottom',
-            duration: 800,
-            easing: 'ease-in-out',
-            reset: false
-        });
-        
-        // Add dynamic CSS for animations
-        const styleSheet = document.createElement("style");
-        styleSheet.type = "text/css";
-        styleSheet.innerText = `
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            .anim-fade-in-up {
-                opacity: 0;
-            }
-        `;
-        document.head.appendChild(styleSheet);
-    </script>
 </body>
 </html>
